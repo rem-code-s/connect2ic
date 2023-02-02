@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { useConnect, useDialog, useProviders } from "../stores/index.ts"
+  import { useConnect, useDialog, useProviders } from "../stores/index"
   import { onMount } from "svelte"
 
   export let onClose: () => void = () => {
@@ -37,17 +37,23 @@
       window.removeEventListener("keydown", handleEsc)
     }
   })
-
 </script>
 
 {#if $isOpen}
+  <!-- svelte-ignore a11y-click-events-have-key-events -->
   <div class={`dialog-styles ${dark ? "dark" : "light"}`} on:click={onClose}>
     <div on:click={onClickInside} class="dialog-container">
       <div>
         {#each $providers as provider}
-          <button key={provider.meta.id} on:click={() => connect(provider.meta.id)}
-                  class={`button-styles ${provider.meta.id}-styles`}>
-            <img class={"img-styles"} src={dark ? provider.meta.icon.dark : provider.meta.icon.light} />
+          <button
+            on:click={() => connect(provider.meta.id)}
+            class={`button-styles ${provider.meta.id}-styles`}
+          >
+            <!-- svelte-ignore a11y-missing-attribute -->
+            <img
+              class={"img-styles"}
+              src={dark ? provider.meta.icon.dark : provider.meta.icon.light}
+            />
             <div>
               <span class="button-label">{provider.meta.name}</span>
             </div>
