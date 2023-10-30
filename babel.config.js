@@ -1,7 +1,3 @@
-// module.exports = {
-//   presets: ["@babel/preset-typescript"],
-// }
-//
 module.exports = {
   presets: ["@babel/preset-typescript", "@babel/preset-react"],
   plugins: [
@@ -9,11 +5,10 @@ module.exports = {
       "extensions": [".png", ".svg", ".jpg"],
     }],
   ],
-  // extensions: [".js", ".mjs", ".svelte", ".html", ".vue", ".ts", ".jsx", ".tsx"],
 
   overrides: [
     {
-      include: ["./packages/core", "./packages/react", "./packages/svelte"],
+      include: ["./packages/core", "./packages/react"],
       presets: [["@babel/preset-env", { targets: "defaults, not ie 11" }]],
     },
   ],

@@ -21,10 +21,6 @@
       "module": "./providers/dist/connect2ic-core-providers.esm.js",
       "default": "./providers/dist/connect2ic-core-providers.cjs.js"
     },
-    "./providers/astrox": {
-      "module": "./providers/astrox/dist/connect2ic-core-providers-astrox.esm.js",
-      "default": "./providers/astrox/dist/connect2ic-core-providers-astrox.cjs.js"
-    },
     "./providers/earth-wallet": {
       "module": "./providers/earth-wallet/dist/connect2ic-core-providers-earth-wallet.esm.js",
       "default": "./providers/earth-wallet/dist/connect2ic-core-providers-earth-wallet.cjs.js"
@@ -54,7 +50,6 @@
     "entrypoints": [
       "index.ts",
       "providers/index.ts",
-      "providers/astrox.ts",
       "providers/earth-wallet.ts",
       "providers/infinity-wallet.ts",
       "providers/internet-identity.ts",
@@ -65,13 +60,8 @@
   },
   "sideEffects": false,
   "dependencies": {
-    "@astrox/connection": "^0.0.52",
-    "@astrox/sdk-core": "^0.1.38",
-    "@astrox/sdk-web": "^0.1.38",
-    "@astrox/sdk-webview": "^0.1.38",
     "@dfinity/agent": "^0.19.3",
     "@dfinity/auth-client": "^0.19.3",
-    "@dfinity/authentication": "^0.14.2",
     "@dfinity/candid": "^0.19.3",
     "@dfinity/identity": "^0.19.3",
     "@dfinity/principal": "^0.19.3",
